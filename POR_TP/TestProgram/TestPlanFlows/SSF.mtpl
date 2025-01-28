@@ -1,0 +1,150 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+TestPlan SSF;
+
+## -------------------------------------------------------------------------##
+##				                  Test Methods								##
+## -------------------------------------------------------------------------##
+
+#-- To print content name
+#Test PythonCommand PlatformRecovery
+#{
+#	Command = "print(\"Pretending to recover platform, re-applying all conditions: Frequency: " + FrequencyVars.AxisCurrentValue +
+#				"; Temperature: " + TemperatureVars.AxisCurrentValue + "; LastContentNameExecuted: " + ContentName.LastContentNameExecuted + "; Voltage: " + VoltageVars.AxisCurrentValue + "\")";
+#	Timeout = "00:00:01";
+#}
+
+Test DecisionNode NoOperation
+{
+	DefaultDecisionExitPort = 1 ;
+	Timeout = "0:00:30";
+}
+
+##								   Flow Defs						        ##
+## -------------------------------------------------------------------------##
+FlowDefs
+{
+    #InitFlow = INIT;
+    #LotStartFlow = LotSetUp::LotSetUpFlow;
+    #UnitStartFlow = UnitSetUp::UnitSetUpFlow;
+    #IACore_Search_512_800 = IACore_Search_512_800;
+    #SSF_IACore_Domain = SSF_IACore_Domain; 
+    #UnitEndFlow = UnitEnd::UnitEndFlow;
+    #LotEndFlow = LotEnd::LotEnd1;
+	MainFlow = SSF;
+    #UnitEndFlow = UNIT_END_FLOW;
+    #LotEndFlow = LOT_END_FLOW;
+}
+
+Flow INIT 
+{
+        FlowItem Initialization PowerOffStage::PowerOffPlatform
+    {
+        Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1 ;} 
+    }
+}
+
+
+##								   Flows								    ##
+## -------------------------------------------------------------------------##
+
+Flow SSF
+{   
+	FlowItem INIT INIT
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo PreFlightFlow;}
+	}
+	FlowItem PreFlightFlow PreFlightFlow::PreFlightFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { Property PassFail = "Pass"; GoTo PrepareSetupForSSF; }
+	}
+	FlowItem PrepareSetupForSSF NoOperation
+	{
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { 
+			Property PassFail = "Pass"; 
+			
+			## Setting up content configuration for SSF run
+			 Set ContentExecutionSetupVars.Timeout = IAContentSetup.Timeout;
+			 Set ContentExecutionSetupVars.BootStage = IAContentSetup.BootStage;
+			 Set ContentExecutionSetupVars.MaxNumberOfTestRuns = IAContentSetup.MaxNumberOfTestRuns;
+			 Set ContentExecutionSetupVars.RequiredNumberOfPasses = IAContentSetup.RequiredNumberOfPasses;
+			 Set ContentExecutionSetupVars.MaxAllowedFailures = IAContentSetup.MaxAllowedFailures;
+			 Set ContentExecutionSetupVars.MaxAllowedConsecutiveFailures = IAContentSetup.MaxAllowedConsecutiveFailures;
+			 Set PostActionsSetupVars.PostFail = IAContentSetup.PostFail;
+			 Set PostActionsSetupVars.PostPass = IAContentSetup.PostPass;
+			 Set ContentExecutionSetupVars.VvarRegex = IAContentSetup.VvarRegex;
+
+			# Setting up Shmoo mode configuration for SSF run
+			Set ShmooExperimentSetup.ShmooExperimentName = IASSFSetup.ShmooExperimentName;
+			Set ShmooExperimentSetup.ShmooExperimentName = IASSFSetup.ShmooDomainName;
+			#Set SearchParam.ShmooLimiterDestination = IASSFSetup.ShmooLimiterDestination;
+
+			# by default,IsPostScrubEnabled was set to False
+			Set ShmooParam.IsPostScrubEnabled = IASSFSetup.IsPostScrubEnabled;
+
+			# Setting up Axis Name Lit of Values to run
+			#Set AVXModeVars.AxisName = IASSFSetup.AVXModeAxisName;
+			#Set AVXModeVars.ListOfValues = IASSFSetup.AVXModeValues;
+			
+			Set FrequencyVars.AxisName = IASSFSetup.FrequencyAxisName;
+			Set FrequencyVars.ListOfValues = IASSFSetup.FrequencyValues;
+
+			Set RingVars.AxisName = IASSFSetup.RingAxisName;
+			Set RingVars.ListOfValues = IASSFSetup.RingValues;
+
+			Set TemperatureVars.AxisName = IASSFSetup.TemperatureAxisName;
+			Set TemperatureVars.ListOfValues = IASSFSetup.TemperatureValues;
+
+			Set VoltageVars.AxisName = IASSFSetup.VoltageAxisName;
+
+			# Setting up VF Cruve
+			Set VfCurveSetupVars.VoltageName = IASSFSetup.VFCurveVoltageName;
+			Set VfCurveSetupVars.FrequencyName = IASSFSetup.VFCurveFrequencyName;
+
+			# Setting up Shmoo CGEM Axes
+			Set ShmooAxesSetupVars.IACoreShmooAxes = IASSFSetup.IAShmooAxes;
+
+			GoTo RunSSF_ShmooIACore; 
+		}
+	}
+
+	FlowItem RunSSF_ShmooIACore ShmooCGEM::Shmoo
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+
+
+		## Shmoo completed (with limiter/s) proceed to Search experiment
+		Result 1  { Property PassFail = "Pass"; Return 1; }
+		
+		## Shmoo completed (without limiter/s) stop experiment (not continue). PDE willl make adjustment on the Shmoo setup	
+		Result 2 {
+			Property PassFail = "Pass";
+
+			## evaluate if there is no limiter (All point pass / all point fail will resulted in no limiter)
+			SmartExitPort => ShmooParam.SweetSpotLimiters == null;
+			Return 2;
+		}
+	}
+
+}
+
+
+
+
+
+
+

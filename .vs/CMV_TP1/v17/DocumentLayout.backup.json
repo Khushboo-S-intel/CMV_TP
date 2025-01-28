@@ -1,0 +1,607 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\CMV_TP\\CMV_TP1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\shmoocgemsetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\shmoocgemsetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\iacoreexpsetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\iacoreexpsetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75AF2319-32A8-4161-B646-93232AA8A116}|Modules\\BootStageTransition\\BootStageTransition.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\bootstagetransition\\bootstagetransition.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{75AF2319-32A8-4161-B646-93232AA8A116}|Modules\\BootStageTransition\\BootStageTransition.sysmtpproj|solutionrelative:modules\\bootstagetransition\\bootstagetransition.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13B3E99F-A4BE-4CED-8CD0-B26DC2A9D0E5}|Modules\\FailureRecovery\\FailureRecovery.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\failurerecovery\\failurerecovery.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{13B3E99F-A4BE-4CED-8CD0-B26DC2A9D0E5}|Modules\\FailureRecovery\\FailureRecovery.sysmtpproj|solutionrelative:modules\\failurerecovery\\failurerecovery.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_program_content\\cmv_arl8b32a_search.content||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_program_content\\cmv_arl8b32a_search.content||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C34933FC-08DE-4E58-B0FC-1AEAC6054D34}|Modules\\Ratio_Control\\Ratio_Control.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\ratio_control\\ratio_control.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{C34933FC-08DE-4E58-B0FC-1AEAC6054D34}|Modules\\Ratio_Control\\Ratio_Control.sysmtpproj|solutionrelative:modules\\ratio_control\\ratio_control.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27FDEB12-439C-4B6D-9839-3DAB2D58A378}|Modules\\ShmooCGEM\\ShmooCGEM.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\shmoocgem\\shmoocgem.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{27FDEB12-439C-4B6D-9839-3DAB2D58A378}|Modules\\ShmooCGEM\\ShmooCGEM.sysmtpproj|solutionrelative:modules\\shmoocgem\\shmoocgem.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F0CBACD-4079-4F7C-A43F-8ABC0C05EA48}|POR_TP\\TestProgram\\TestProgram.systpproj|c:\\cmv_tp\\cmv_tp1\\por_tp\\testprogram\\testplanflows\\ssf.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{1F0CBACD-4079-4F7C-A43F-8ABC0C05EA48}|POR_TP\\TestProgram\\TestProgram.systpproj|solutionrelative:por_tp\\testprogram\\testplanflows\\ssf.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\bindefinitions.bdefs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\bindefinitions.bdefs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_program_content\\slim20.sbdefs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_program_content\\slim20.sbdefs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_program_content\\slim20.content||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_program_content\\slim20.content||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\common.imp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\common.imp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\contentexecutionsetup.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\contentexecutionsetup.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\testsetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\testsetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\intecvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\intecvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\axessetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\axessetupvars.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\platformsetup.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\platformsetup.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_operations.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_operations.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\uservardefinitions.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\uservardefinitions.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_program_content\\cmv_arl8b32a_search.sbdefs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_program_content\\cmv_arl8b32a_search.sbdefs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\binsreport.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\binsreport.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\binsreport1.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\binsreport1.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_program_content\\slimcontent.sbdefs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_program_content\\slimcontent.sbdefs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329FA969-4E1A-4792-BCF6-224733CC9B92}|Modules\\CoreVoltage\\CoreVoltage.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\corevoltage\\corevoltage.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{329FA969-4E1A-4792-BCF6-224733CC9B92}|Modules\\CoreVoltage\\CoreVoltage.sysmtpproj|solutionrelative:modules\\corevoltage\\corevoltage.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\test_program_content\\slimcontent.content||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\test_program_content\\slimcontent.content||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378473EE-414F-445F-B5AC-56FD1EEC5688}|Modules\\PowerOffStage\\PowerOffStage.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\poweroffstage\\poweroffstage.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{378473EE-414F-445F-B5AC-56FD1EEC5688}|Modules\\PowerOffStage\\PowerOffStage.sysmtpproj|solutionrelative:modules\\poweroffstage\\poweroffstage.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E63A54C-8B21-4E18-BF33-777A98BB0586}|Modules\\Intec\\Intec.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\intec\\intec.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{7E63A54C-8B21-4E18-BF33-777A98BB0586}|Modules\\Intec\\Intec.sysmtpproj|solutionrelative:modules\\intec\\intec.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A970AF-9036-46D8-8495-5ACC7FC25E92}|Modules\\PreFlightFlow\\PreFlightFlow.sysmtpproj|c:\\cmv_tp\\cmv_tp1\\modules\\preflightflow\\preflightflow.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}",
+      "RelativeMoniker": "D:0:0:{42A970AF-9036-46D8-8495-5ACC7FC25E92}|Modules\\PreFlightFlow\\PreFlightFlow.sysmtpproj|solutionrelative:modules\\preflightflow\\preflightflow.mtpl||{EA2C7E68-F1EB-49E7-A363-334EE595A7C4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F0CBACD-4079-4F7C-A43F-8ABC0C05EA48}|POR_TP\\TestProgram\\TestProgram.systpproj|c:\\cmv_tp\\cmv_tp1\\por_tp\\testprogram\\subtestplan.stpl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1F0CBACD-4079-4F7C-A43F-8ABC0C05EA48}|POR_TP\\TestProgram\\TestProgram.systpproj|solutionrelative:por_tp\\testprogram\\subtestplan.stpl||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963FB95D-140C-4980-B084-32DA25CE3DEA}|Shared\\AguilaTalonLibrary\\AguilaTalonLibrary.csproj|c:\\users\\lab_cmvba.gar\\.nuget\\packages\\intel.mfg.talon.services.pythonapi\\4.7.0\\contentfiles\\any\\net8.0\\pythonscripts\\aguila\\profiler.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|c:\\cmv_tp\\cmv_tp1\\shared\\common\\environmentpycommands.usrv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8AE556D9-A969-46EF-A1E4-A9BFBBDF0975}|Shared\\Common\\Common.sysctpproj|solutionrelative:shared\\common\\environmentpycommands.usrv||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1296,
+          "SelectedChildIndex": 27,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c62b18f-232a-43f4-9d6c-e52456a2464c}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BootStageTransition.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\BootStageTransition\\BootStageTransition.mtpl",
+              "RelativeDocumentMoniker": "Modules\\BootStageTransition\\BootStageTransition.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\BootStageTransition\\BootStageTransition.mtpl",
+              "RelativeToolTip": "Modules\\BootStageTransition\\BootStageTransition.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-27T10:16:05.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Test_Operations.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Operations.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Operations.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Operations.usrv",
+              "RelativeToolTip": "Shared\\Common\\Test_Operations.usrv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-24T05:38:32.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PlatformSetup.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\PlatformSetup.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\PlatformSetup.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\PlatformSetup.usrv",
+              "RelativeToolTip": "Shared\\Common\\PlatformSetup.usrv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-24T05:38:21.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Slim20.sbdefs",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\Slim20.sbdefs",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Program_Content\\Slim20.sbdefs",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\Slim20.sbdefs",
+              "RelativeToolTip": "Shared\\Common\\Test_Program_Content\\Slim20.sbdefs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-24T05:37:16.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Slim20.content",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\Slim20.content",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Program_Content\\Slim20.content",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\Slim20.content",
+              "RelativeToolTip": "Shared\\Common\\Test_Program_Content\\Slim20.content",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-24T05:36:27.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ContentExecutionSetup.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\ContentExecutionSetup.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\ContentExecutionSetup.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\ContentExecutionSetup.usrv",
+              "RelativeToolTip": "Shared\\Common\\ContentExecutionSetup.usrv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-24T05:08:07.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PowerOffStage.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\PowerOffStage\\PowerOffStage.mtpl",
+              "RelativeDocumentMoniker": "Modules\\PowerOffStage\\PowerOffStage.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\PowerOffStage\\PowerOffStage.mtpl",
+              "RelativeToolTip": "Modules\\PowerOffStage\\PowerOffStage.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T07:28:22.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Intec.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\Intec\\Intec.mtpl",
+              "RelativeDocumentMoniker": "Modules\\Intec\\Intec.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\Intec\\Intec.mtpl",
+              "RelativeToolTip": "Modules\\Intec\\Intec.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T07:24:39.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PreFlightFlow.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\PreFlightFlow\\PreFlightFlow.mtpl",
+              "RelativeDocumentMoniker": "Modules\\PreFlightFlow\\PreFlightFlow.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\PreFlightFlow\\PreFlightFlow.mtpl",
+              "RelativeToolTip": "Modules\\PreFlightFlow\\PreFlightFlow.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T07:11:40.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SubTestPlan.stpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\POR_TP\\TestProgram\\SubTestPlan.stpl",
+              "RelativeDocumentMoniker": "POR_TP\\TestProgram\\SubTestPlan.stpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\POR_TP\\TestProgram\\SubTestPlan.stpl",
+              "RelativeToolTip": "POR_TP\\TestProgram\\SubTestPlan.stpl",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T04:35:35.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Common.imp",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Common.imp",
+              "RelativeDocumentMoniker": "Shared\\Common\\Common.imp",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Common.imp",
+              "RelativeToolTip": "Shared\\Common\\Common.imp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T04:35:11.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SlimContent.sbdefs",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\SlimContent.sbdefs",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Program_Content\\SlimContent.sbdefs",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\SlimContent.sbdefs",
+              "RelativeToolTip": "Shared\\Common\\Test_Program_Content\\SlimContent.sbdefs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T04:32:11.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SlimContent.content",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\SlimContent.content",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Program_Content\\SlimContent.content",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\SlimContent.content",
+              "RelativeToolTip": "Shared\\Common\\Test_Program_Content\\SlimContent.content",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T04:18:01.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BinDefinitions.bdefs",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\BinDefinitions.bdefs",
+              "RelativeDocumentMoniker": "Shared\\Common\\BinDefinitions.bdefs",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\BinDefinitions.bdefs",
+              "RelativeToolTip": "Shared\\Common\\BinDefinitions.bdefs",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T04:17:21.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BinsReport.csv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\BinsReport.csv",
+              "RelativeDocumentMoniker": "Shared\\Common\\BinsReport.csv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\BinsReport.csv",
+              "RelativeToolTip": "Shared\\Common\\BinsReport.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-01-22T04:17:19.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "BinsReport1.csv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\BinsReport1.csv",
+              "RelativeDocumentMoniker": "Shared\\Common\\BinsReport1.csv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\BinsReport1.csv",
+              "RelativeToolTip": "Shared\\Common\\BinsReport1.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-01-22T04:17:15.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CMV_ARL8B32A_Search.sbdefs",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.sbdefs",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.sbdefs",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.sbdefs",
+              "RelativeToolTip": "Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.sbdefs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-21T09:47:21.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UservarDefinitions.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\UservarDefinitions.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\UservarDefinitions.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\UservarDefinitions.usrv",
+              "RelativeToolTip": "Shared\\Common\\UservarDefinitions.usrv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-19T15:24:41.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TestSetupVars.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\TestSetupVars.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\TestSetupVars.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\TestSetupVars.usrv",
+              "RelativeToolTip": "Shared\\Common\\TestSetupVars.usrv",
+              "ViewState": "AgIAANcAAAAAAAAAAAAAAPAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-19T15:24:15.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IACoreExpSetupVars.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\IACoreExpSetupVars.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\IACoreExpSetupVars.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\IACoreExpSetupVars.usrv",
+              "RelativeToolTip": "Shared\\Common\\IACoreExpSetupVars.usrv",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFwAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-08T03:51:50.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AxesSetupVars.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\AxesSetupVars.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\AxesSetupVars.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\AxesSetupVars.usrv",
+              "RelativeToolTip": "Shared\\Common\\AxesSetupVars.usrv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-09T09:49:36.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShmooCGEMSetupVars.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\ShmooCGEMSetupVars.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\ShmooCGEMSetupVars.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\ShmooCGEMSetupVars.usrv",
+              "RelativeToolTip": "Shared\\Common\\ShmooCGEMSetupVars.usrv",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAHcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-08T05:08:16.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Profiler.py",
+              "DocumentMoniker": "C:\\Users\\lab_cmvba.GAR\\.nuget\\packages\\intel.mfg.talon.services.pythonapi\\4.7.0\\contentFiles\\any\\net8.0\\PythonScripts\\Aguila\\Profiler.py",
+              "RelativeDocumentMoniker": "..\\..\\Users\\lab_cmvba.GAR\\.nuget\\packages\\intel.mfg.talon.services.pythonapi\\4.7.0\\contentFiles\\any\\net8.0\\PythonScripts\\Aguila\\Profiler.py",
+              "ToolTip": "C:\\Users\\lab_cmvba.GAR\\.nuget\\packages\\intel.mfg.talon.services.pythonapi\\4.7.0\\contentFiles\\any\\net8.0\\PythonScripts\\Aguila\\Profiler.py [Read Only]",
+              "RelativeToolTip": "..\\..\\Users\\lab_cmvba.GAR\\.nuget\\packages\\intel.mfg.talon.services.pythonapi\\4.7.0\\contentFiles\\any\\net8.0\\PythonScripts\\Aguila\\Profiler.py [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHeSURBVDhPpVMxa1NRFP7ebZLSlgaltNpSVCySRUxL0NAh4FJpHWpxcZAUBEPG/AKHDsVBN5eGrCnoYKCDoDiUCKKBjtZBUZtJ2ojYJr40ue\u002B\u002B47k3VzD0hQr94OOed8853/k47z2cCETk2NAgk8mQDQMhhFjK5/Mb9vEotIDruoEsFovEzVvZbPaWLTcQ9uxCpVLp4l\u002Bk0\u002BlEPB5/wIPm7RVC9uxCMpm0UTdKpRKi0WiCQy3wUt8FCvw7VSNxbRapG4voDwucGgyjXC7bzH84ePt1HysbH/GhWoNstzA1OoSFhZuxQqFg8sfu4FutAd\u002BT8KSEYm7v7GJ0YnLClgYLaAcjU9N4Vx9Dda8OBz7OjwywSNsIXY39vEL7TxWpxv2eO3hWHUZ19xc8ti25UdvXzdpNWH0BDj8JiLOrPXfweOu9mRgRhOXUEPr7IiBfYeacB9HaBNRvQH4f6\u002BlgMERwGxJP7grEoq9shj9Uz\u002BVGpmIi4vXcwdzlcePgzLAuZPiSGw869Jg\u002Biw1Mvw50oLGcuoh71y8h1HwB1Js8UfFLnwScNnBhdYVLWsy1IwK5XM5GHaw9uu0LeSCMddZA32lz7zjOQxMcByK1SPU3O/Rjnai2fkjNz8/5L77TyQJ/AJc67LNf3QeWAAAAAElFTkSuQmCC",
+              "WhenOpened": "2025-01-15T06:47:45.79Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IntecVars.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\IntecVars.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\IntecVars.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\IntecVars.usrv",
+              "RelativeToolTip": "Shared\\Common\\IntecVars.usrv",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAEAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-15T05:21:53.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CMV_ARL8B32A_Search.content",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.content",
+              "RelativeDocumentMoniker": "Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.content",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.content",
+              "RelativeToolTip": "Shared\\Common\\Test_Program_Content\\CMV_ARL8B32A_Search.content",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-09T09:23:06.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ratio_Control.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\Ratio_Control\\Ratio_Control.mtpl",
+              "RelativeDocumentMoniker": "Modules\\Ratio_Control\\Ratio_Control.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\Ratio_Control\\Ratio_Control.mtpl",
+              "RelativeToolTip": "Modules\\Ratio_Control\\Ratio_Control.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-12T14:29:28.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "EnvironmentPyCommands.usrv",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\EnvironmentPyCommands.usrv",
+              "RelativeDocumentMoniker": "Shared\\Common\\EnvironmentPyCommands.usrv",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Shared\\Common\\EnvironmentPyCommands.usrv",
+              "RelativeToolTip": "Shared\\Common\\EnvironmentPyCommands.usrv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-12T14:40:43.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FailureRecovery.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\FailureRecovery\\FailureRecovery.mtpl",
+              "RelativeDocumentMoniker": "Modules\\FailureRecovery\\FailureRecovery.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\FailureRecovery\\FailureRecovery.mtpl",
+              "RelativeToolTip": "Modules\\FailureRecovery\\FailureRecovery.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-08T03:45:33.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CoreVoltage.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\CoreVoltage\\CoreVoltage.mtpl",
+              "RelativeDocumentMoniker": "Modules\\CoreVoltage\\CoreVoltage.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\CoreVoltage\\CoreVoltage.mtpl",
+              "RelativeToolTip": "Modules\\CoreVoltage\\CoreVoltage.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-08T03:45:20.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SSF.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\POR_TP\\TestProgram\\TestPlanFlows\\SSF.mtpl",
+              "RelativeDocumentMoniker": "POR_TP\\TestProgram\\TestPlanFlows\\SSF.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\POR_TP\\TestProgram\\TestPlanFlows\\SSF.mtpl",
+              "RelativeToolTip": "POR_TP\\TestProgram\\TestPlanFlows\\SSF.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-08T03:44:09.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ShmooCGEM.mtpl",
+              "DocumentMoniker": "C:\\CMV_TP\\CMV_TP1\\Modules\\ShmooCGEM\\ShmooCGEM.mtpl",
+              "RelativeDocumentMoniker": "Modules\\ShmooCGEM\\ShmooCGEM.mtpl",
+              "ToolTip": "C:\\CMV_TP\\CMV_TP1\\Modules\\ShmooCGEM\\ShmooCGEM.mtpl",
+              "RelativeToolTip": "Modules\\ShmooCGEM\\ShmooCGEM.mtpl",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-08T03:43:41.248Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{9dcd274e-2ca5-4b24-a2e5-7dd1ea5236f1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{427b2608-ae73-48f6-8368-025971261e63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1296,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1296,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1296,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1296,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1296,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

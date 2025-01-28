@@ -1,0 +1,21 @@
+Version 1.0;
+
+##			  Content Execution Configuration           ##
+## ---------------------------------------------------- ##
+UserVars ContentExecutionSetupVars
+{
+	ContentGroup ContentGroupName = Slim20; #slimcontent contains only the sanity seeds here (not the og slimcontent)
+	String Timeout = "24:20:20";
+	String BootStage = "EFI";
+	Integer RequiredNumberOfPasses = 1;
+	Integer MaxNumberOfTestRuns = 1;
+	Integer MaxAllowedFailures = 0;
+    Integer MaxAllowedConsecutiveFailures = 0;
+	String VvarRegex = '<Vvar\s+Number="(?<number>0x[a-fA-F0-9]+)"\s+Value="(?<value>0x[a-fA-F0-9]+)"\s+\/>';
+}
+
+UserVars PostActionsSetupVars
+{
+	Boolean PostPass = False;
+	Boolean PostFail = True;
+}

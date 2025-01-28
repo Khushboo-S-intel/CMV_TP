@@ -1,0 +1,365 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan ShmooCGEM;
+
+##								   Shmoo CGEM								##
+## -------------------------------------------------------------------------##
+
+Test DecisionNode NoOperation
+{
+	DefaultDecisionExitPort = 1 ;
+	Timeout = "0:00:30";
+}
+
+#-- To trigger start profiling (start polling)
+Test PythonCommand StartProfiling
+{
+	Command = "profiler.start_profiling([aizatprofiling.Ring_Ratio_Profile , aizatprofiling.Core_Ratio_Profile,  aizatprofiling.Max_DTS_Profile, aizatprofiling.VCC_CORE0, aizatprofiling.Intec_TC_Profile, aizatprofiling.Intec_SP_Profile, aizatprofiling.Intec_FB_Profile])";
+	Timeout = "0:00:02";
+}
+
+#-- To trigger stop profiling (stop polling data)
+Test PythonCommand StopProfiling
+{
+	Command = "profiler.stop_profiling()";
+	Timeout = "0:00:30";
+}
+
+Test MarionetteExecuteContent Shmoo_ExecuteDragonTest_SSF
+{
+	Timeout = ContentExecutionSetupVars.Timeout;
+	#ContentGroup =  IACore_Wc_limiters;
+	ContentGroup = ContentExecutionSetupVars.ContentGroupName;
+    BootStage = ContentExecutionSetupVars.BootStage;
+	Transport = MarionetteSerialTransport { ComPort = SerialPortSetupVars.ComPortNumber; };
+    ContentGroupExecutionMode = ShmooMode
+	{
+		MaxNumberOfTestRuns = ContentExecutionSetupVars.MaxNumberOfTestRuns;
+		RequiredNumberOfPasses = ContentExecutionSetupVars.RequiredNumberOfPasses;
+		MaxAllowedFailures = ContentExecutionSetupVars.MaxAllowedFailures;
+		MaxAllowedConsecutiveFailures = ContentExecutionSetupVars.MaxAllowedConsecutiveFailures;
+		ExperimentName = ShmooExperimentSetup.ShmooExperimentName;
+		Domain =  ShmooExperimentSetup.ShmooDomainName;
+		SaveShmooLimitersTo = ShmooParam.ShmooLimiterDestination;
+		Limiters = {
+			IsEnabled = ShmooParam.IsPostScrubEnabled;
+			#InputLimiters = SearchParam.SearchLimiters; 
+		};
+		Vfcurve = { 
+			Voltage = VfCurveSetupVars.VoltageName; 
+			Frequency = VfCurveSetupVars.FrequencyName;
+			};
+		#ShmooAxes =  ShmooAxes.VparallelPcodeVoltageSetFlow;
+		ShmooAxes =  ShmooAxesSetupVars.IACoreShmooAxes;
+	};  
+	
+    EnablePostFailActions = True;
+    EnablePostPassActions = True;
+	VvarRegex = ContentExecutionSetupVars.VvarRegex;
+}
+
+Flow SetupFlow 
+{
+	FlowItem PowerOffPlatform PowerOffStage::PowerOffPlatform
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1 ;} 
+	}
+}
+Flow BootHalt
+{
+	FlowItem BootHalt BootStageTransition::BootStageTransition
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1 ;} 
+	}
+}
+Flow SetupFrequency 
+	{   
+		FlowItem SetupFrequency Ratio_Control :: set_core_ratio
+		{
+	    Result -2 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Set FrequencyVars.AxisPointSetup = True; Return 1; }
+		}
+	}
+Flow SetTemp
+{
+	FlowItem SetupTemperature Intec::Intec
+	{
+		Result -2 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Set TemperatureVars.AxisPointSetup = True; Return 1; }
+	}
+}
+Flow EFI
+{
+	FlowItem cdietoefi EFI::EFI #edited this flow, had frequency vars set to false - not needed here ?
+	{
+	    Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Return 1; }
+	}
+}
+Flow SetupAcode
+{
+	FlowItem SetupAcodeRatio Ratio_Control :: set_acode_core_ratio 
+	{
+		Result -2 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Set FrequencyVars.AxisPointSetup = True; Return 1; }
+
+	}
+}
+Flow CoreVoltage
+{
+	FlowItem SetCoreVoltageFlow CoreVoltage::CoreVoltage
+	{
+		Result -2 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Return 0; }
+		Result 1 { 
+			Property PassFail = "Pass"; Set VoltageVars.AxisPointSetup = True; Set DecisionNode.RebootAndReapplySetup = False; 
+			Return 1; }
+			#GoTo StartProfiling; }
+	}
+}
+
+#on flow for timeout r hang start from power off till efi currenmt voltagre value
+#content fail with valid vvar   , jump to different or next seed
+
+Flow Shmoo
+{
+	FlowItem RunShmooSSF Shmoo_ExecuteDragonTest_SSF
+	{
+		Result -2 { 
+			Property PassFail = "Fail"; 
+			Return -2; 
+			#Call PostPassFailActionsFlow; #Py/ipc rror
+		}
+		Result -1 { 
+			Property PassFail = "Fail";
+			#Property PassFail = "Pass";
+			Return -1; 
+		}
+		Result 0 { 
+			Property PassFail = "Fail"; 
+			#Property PassFail = "Pass";
+			Return 0; 
+		} 
+		Result 1 { 
+			Property PassFail = "Pass"; 
+			Call PostPassFailActionsFlow; 
+		}
+		Result 2 {
+			Property PassFail = "Fail";
+			Set ContentUsrv.LastContentResult = toString($Result.LastContentResult.Status); 
+			Set ContentUsrv.Status = toString($Result.LastContentResult.FailureType);
+			Set ContentName.LastContentNameExecuted = $Result.LastContentResult.Name; 
+			Call PostPassFailActionsFlow;
+		}
+		Result 3 {
+			Property PassFail = "Pass";
+			Set ContentUsrv.LastContentResult = toString($Result.LastContentResult.Status); 
+			Set ContentUsrv.Status = toString($Result.LastContentResult.FailureType);
+			Set ContentName.LastContentNameExecuted = $Result.LastContentResult.Name; 
+			Call PostPassFailActionsFlow;
+		}
+		Result 20 {
+			Property PassFail = "Fail";
+			Call Boottocdie1;
+		}
+        Result  21 { #earlier it was 3
+			Property PassFail = "Pass";
+			Call SetupFrequency1;}  
+		Result  23 { #earlier it was 4
+			Property PassFail = "Pass"; 
+			Call SetupTemperature;}   ## here, call SetTemp (define the same as a flow item inside Shmoo)
+		Result 25 { #earlier it was 6
+			Property PassFail = "Pass";
+			Call SetCoreVoltageFlow;}  ## DOUBT - here a flow item defined inside a flow is called, rather than the flow itself
+			## alt - call the flow CoreVoltage and define a flow item for the same
+			## in the flow, as soon as voltage is set, the profiling begins
+
+		## never called in the actual flow - dummy
+		Result 27 {
+			Property PassFail = "Pass";
+			Call cdietoefi;} 
+		Result 29{
+			Property PassFail = "Pass";
+			Call SetupAcodeRatio;}
+
+	}
+
+	##		currently, only SetupFrequency1, SetupTemperature and setcorevoltage are called		##
+	## for setupfreq1, a flow is defined outside the Shmoo flow, and the corresponding flow item is defined inside Shmoo flow ##
+	##	for both temp and voltage, can we call the flows defined outside Shmoo flow (to mantain consistency)	##
+	
+	FlowItem Boottocdie1 Boottocdie1
+	{
+	    Result -2 { Property PassFail = "Fail"; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Back 1; } 
+	}
+	FlowItem SetupFrequency1 SetupFrequency1
+	{
+	    Result -2 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set FrequencyVars.AxisPointSetup = True; Back 1; }
+	}
+
+	FlowItem SetupTemperature Intec::Intec
+	{
+		Result -2 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set TemperatureVars.AxisPointSetup = True; Back 1; }
+	}
+
+	FlowItem cdietoefi EFI::EFI #edited this flow, had frequency vars set to false - not needed here ?
+	{
+	    Result -2 { Property PassFail = "Fail"; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Back 1; }
+	}
+	FlowItem SetupAcodeRatio Ratio_Control :: set_acode_core_ratio 
+	{
+		Result -2 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set FrequencyVars.AxisPointSetup = True; Back 1; }
+
+	}
+	FlowItem SetCoreVoltageFlow CoreVoltage::CoreVoltage 
+	{
+		Result -2 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set VoltageVars.AxisPointSetup = True; Set DecisionNode.RebootAndReapplySetup = False; Back 1; }
+	}
+	FlowItem PostPassFailActionsFlow FailureRecovery::PostPassFailActionsFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Back 1; }
+	}
+}
+ Flow SetupFrequency1
+{
+	FlowItem KillPy PreFlightFlow::PythonConsoleStartupScript
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo SetupFlow;}
+	}
+	FlowItem SetupFlow SetupFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass";GoTo BootHalt; }
+	}
+	FlowItem BootHalt BootHalt
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo SetupFrequency;}
+	}
+	FlowItem SetupFrequency SetupFrequency
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo SetupRing;}
+	}
+	FlowItem SetupRing Ratio_Control::set_ring_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo EFI;}
+	}
+	FlowItem EFI EFI
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo SetupAcodeRatio; }
+	}
+	FlowItem SetupAcodeRatio SetupAcode
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  GoTo ReadRatios; }
+	}
+	FlowItem ReadRatios Ratio_Control::read_ratios
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  Return 1; }
+	}
+}
+
+Flow Boottocdie1
+{
+	FlowItem BootHalt BootHalt
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo SetupFrequency;}
+	}
+	FlowItem SetupFrequency SetupFrequency
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo SetupRing;}
+	}
+	FlowItem SetupRing Ratio_Control::set_ring_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo EFI;}
+	}
+	FlowItem EFI EFI
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo SetupAcodeRatio; }
+	}
+	FlowItem SetupAcodeRatio SetupAcode
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  GoTo ReadRatios; }
+	}
+	FlowItem ReadRatios Ratio_Control::read_ratios
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  Return 1; }
+	}
+}

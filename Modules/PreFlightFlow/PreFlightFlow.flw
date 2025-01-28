@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="PreFlightFlow::PreFlightFlow.ConfigureSerialPort" X="25" Y="25" />
+  <FlowItem name="PreFlightFlow::PreFlightFlow.PythonConsoleStartupScript" X="203" Y="167" />
+  <FlowItem name="PreFlightFlow::RestartPyConsole.RestartPy" X="25" Y="25" />
+</HDMTFlowItemCoor>

@@ -1,0 +1,192 @@
+Version 1.0;
+
+UserVars ShmooExperimentSetup
+{
+	String ShmooExperimentName = "Shmoo";
+	String ShmooDomainName = "IACore";
+
+}
+
+UserVars VfCurveSetupVars
+{
+	String VoltageName = "Voltage";
+	String FrequencyName = "Frequency";
+}
+
+UserVars ShmooParam
+{
+	Boolean IsPostScrubEnabled = False;
+	Boolean IsSearchSSFEnabled = False;
+
+	String ShmooLimiterDestination = nameof(ShmooParam.SweetSpotLimiters);
+	Array<ShmooLineLimiter> SweetSpotLimiters = null;
+	Array<ShmooLineLimiter> PostScrubLimiters = null;
+}
+
+UserVars ShmooAxesSetupVars
+{
+	Array<ShmooAxis> IACoreShmooAxes = [
+          ARLSShmooAxes.FrequencyAxis,
+		  ARLSShmooAxes.TemperatureAxis,
+		  ARLSShmooAxes.VoltageAxis
+		];	
+
+}
+
+UserVars ARLSShmooAxes
+{
+	
+	ShmooAxis FrequencyAxis = {
+				AxisName = FrequencyVars.AxisName;
+				AxisCoordinates = 
+				[ 
+					{ 
+						IsActive = True;
+						Values = FrequencyVars.ListOfValues;
+						Step = FrequencyVars.Step;
+						StopOn = FrequencyVars.StopOn;
+					}
+					
+				];
+
+				# -- debug -- #
+				AxisSetupFlowExitPort = FrequencyVars.AxisExitPort;
+				AxisValueToSet = nameof(FrequencyVars.AxisCurrentValue);
+				AxisSetupPassed = nameof(FrequencyVars.AxisPointSetup);
+				#AxisSafeRegion=[FrequencyVars.SafeRegionMinValue,FrequencyVars.SafeRegionMaxValue];
+				AxisMaxAllowedStopPoints = FrequencyVars.AxisMaxAllowedStopPoints;	
+				AxisMaxAllowedConsecutiveStopPoints = FrequencyVars.AxisMaxAllowedConsecutiveStopPoints;
+	};
+
+	ShmooAxis TemperatureAxis = {
+			AxisName = TemperatureVars.AxisName;
+			AxisCoordinates = 
+			[ 
+				{ 
+					IsActive = True; 
+					Values = TemperatureVars.ListOfValues;
+					Step = TemperatureVars.Step;
+					StopOn = TemperatureVars.StopOn;
+				}
+			];
+			AxisSetupFlowExitPort = TemperatureVars.AxisExitPort;
+			AxisValueToSet = nameof(TemperatureVars.AxisCurrentValue);
+			AxisSetupPassed = nameof(TemperatureVars.AxisPointSetup);
+			#AxisSafeRegion=[TemperatureVars.SafeRegionMinValue,TemperatureVars.SafeRegionMaxValue];
+			AxisMaxAllowedStopPoints = TemperatureVars.AxisMaxAllowedStopPoints;	
+			AxisMaxAllowedConsecutiveStopPoints = TemperatureVars.AxisMaxAllowedConsecutiveStopPoints;
+	};
+
+	ShmooAxis VoltageAxis = {
+			AxisName = VoltageVars.AxisName;
+			AxisCoordinates = 
+			[ 
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "8"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_8,IAVoltageSetup.MinVoltage];
+                    #IsActive = True; 
+					Values = [0.70,0.48]; #initially was 1.2,0.48
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  &&  FrequencyVars.AxisCurrentValue == "16"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_16,IAVoltageSetup.MinVoltage];
+					Values = [0.71, 0.48];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  &&  FrequencyVars.AxisCurrentValue == "20"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_20,IAVoltageSetup.MinVoltage];
+					#Values = [0.76, 0.48];
+					#Values = [0.62, 0.56];
+					Values = [0.62, 0.54];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  &&  FrequencyVars.AxisCurrentValue == "24"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_24, IAVoltageSetup.MinVoltage];
+					Values = [0.82, 0.48];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "30"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_30,IAVoltageSetup.MinVoltage];
+					#Values = [0.92, 0.48];56
+					#Values = [0.80, 0.65];
+					Values = [0.72, 0.54];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "35"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_35,IAVoltageSetup.MinVoltage];
+					Values = [1.07, 0.48];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+                { 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "48";
+					#Values = [IAVoltageSetup.MaxVoltageCR_35,IAVoltageSetup.MinVoltage];
+					Values = [1.2,0.48];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+                    IsActive = True; 
+					Values = [1.2,0.56]; #this is the default voltage range if no core ratio is matching
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				}
+				##		commenting this out now since only SSF now/no need for post scrub now		##
+				#{ 
+				#	IsActive = ShmooParam.IsPostScrubEnabled; 
+				#	Offset = [IAPostScrubSetup.MinOffsetPostScrub, IAPostScrubSetup.MaxOffsetPostScrub];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#}
+			];
+			AxisSetupFlowExitPort = VoltageVars.AxisExitPort;
+			AxisValueToSet = nameof(VoltageVars.AxisCurrentValue);
+			AxisSetupPassed = nameof(VoltageVars.AxisPointSetup);
+			AxisMaxAllowedStopPoints = VoltageVars.AxisMaxAllowedStopPoints;	
+			AxisMaxAllowedConsecutiveStopPoints = VoltageVars.AxisMaxAllowedConsecutiveStopPoints;
+	};
+	
+}
+
+SelectorRuleCollection RingCollection
+{
+	SelectorRule RingRatio(RingRatio8, RingRatio14, RingRatio20, RingRatio28, RingRatio34, RingRatio39)
+	{
+		RingRatio8 => FrequencyVars.AxisCurrentValue == "8";
+		RingRatio14 => FrequencyVars.AxisCurrentValue == "20";
+		RingRatio20 => FrequencyVars.AxisCurrentValue == "30";	
+		RingRatio28 => FrequencyVars.AxisCurrentValue == "48"; #will check
+		RingRatio34 => FrequencyVars.AxisCurrentValue == "55";
+		RingRatio39 => FrequencyVars.AxisCurrentValue == "56";
+	}
+}
+
+## pysv - 
+## -------
+## |f1|8  |f0|8
+## |f2|20 |f1|14
+## |f3|30 |f2|20
+## |f4|48 |f3|28
+## |f5|53 |f4|34
+## |f6|55 |f5|37
+## |f7|56 |f6|38
+## |f8|57 |f7|39
+## |f9|57 |f8|39
+   
+   
+   
+   
+   
+   
+   
+   
